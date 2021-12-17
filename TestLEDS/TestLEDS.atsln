@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "TestLEDS", "TestLEDS\TestLEDS.cproj", "{6D218A4B-D303-428C-8702-209EBB955AFB}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "TestPWM", "..\TestPWM\TestPWM.cproj", "{87157F54-B1CA-4827-88B0-B05D4E3D06DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D218A4B-D303-428C-8702-209EBB955AFB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6D218A4B-D303-428C-8702-209EBB955AFB}.Debug|AVR.Build.0 = Debug|AVR
+		{6D218A4B-D303-428C-8702-209EBB955AFB}.Release|AVR.ActiveCfg = Release|AVR
+		{6D218A4B-D303-428C-8702-209EBB955AFB}.Release|AVR.Build.0 = Release|AVR
+		{87157F54-B1CA-4827-88B0-B05D4E3D06DA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{87157F54-B1CA-4827-88B0-B05D4E3D06DA}.Debug|AVR.Build.0 = Debug|AVR
+		{87157F54-B1CA-4827-88B0-B05D4E3D06DA}.Release|AVR.ActiveCfg = Release|AVR
+		{87157F54-B1CA-4827-88B0-B05D4E3D06DA}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

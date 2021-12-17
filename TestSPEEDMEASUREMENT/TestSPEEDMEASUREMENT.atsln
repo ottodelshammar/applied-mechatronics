@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "TestSPEEDMEASUREMENT", "TestSPEEDMEASUREMENT\TestSPEEDMEASUREMENT.cproj", "{A87E11C2-3230-4C39-B61C-50A2CF5177CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87E11C2-3230-4C39-B61C-50A2CF5177CC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A87E11C2-3230-4C39-B61C-50A2CF5177CC}.Debug|AVR.Build.0 = Debug|AVR
+		{A87E11C2-3230-4C39-B61C-50A2CF5177CC}.Release|AVR.ActiveCfg = Release|AVR
+		{A87E11C2-3230-4C39-B61C-50A2CF5177CC}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

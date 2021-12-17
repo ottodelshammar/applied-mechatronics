@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "TestLOOPBACK2", "TestLOOPBACK2\TestLOOPBACK2.cproj", "{650002C4-7702-4CEC-9A64-68F08A99CBF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{650002C4-7702-4CEC-9A64-68F08A99CBF1}.Debug|AVR.ActiveCfg = Debug|AVR
+		{650002C4-7702-4CEC-9A64-68F08A99CBF1}.Debug|AVR.Build.0 = Debug|AVR
+		{650002C4-7702-4CEC-9A64-68F08A99CBF1}.Release|AVR.ActiveCfg = Release|AVR
+		{650002C4-7702-4CEC-9A64-68F08A99CBF1}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

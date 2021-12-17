@@ -1,0 +1,124 @@
+
+TestPWM.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  0000006c  000000e0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  000000e0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000097  00000000  00000000  000007ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      0000002f  00000000  00000000  00000843  2**0
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000030  00000000  00000000  00000872  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000000fd  00000000  00000000  000008a2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000000c9  00000000  00000000  0000099f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000000f8  00000000  00000000  00000a68  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000044  00000000  00000000  00000b60  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000089  00000000  00000000  00000ba4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  00000c2d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+   2:	20 c0       	rjmp	.+64     	; 0x44 <__bad_interrupt>
+   4:	1f c0       	rjmp	.+62     	; 0x44 <__bad_interrupt>
+   6:	1e c0       	rjmp	.+60     	; 0x44 <__bad_interrupt>
+   8:	1d c0       	rjmp	.+58     	; 0x44 <__bad_interrupt>
+   a:	1c c0       	rjmp	.+56     	; 0x44 <__bad_interrupt>
+   c:	1b c0       	rjmp	.+54     	; 0x44 <__bad_interrupt>
+   e:	1a c0       	rjmp	.+52     	; 0x44 <__bad_interrupt>
+  10:	19 c0       	rjmp	.+50     	; 0x44 <__bad_interrupt>
+  12:	18 c0       	rjmp	.+48     	; 0x44 <__bad_interrupt>
+  14:	17 c0       	rjmp	.+46     	; 0x44 <__bad_interrupt>
+  16:	16 c0       	rjmp	.+44     	; 0x44 <__bad_interrupt>
+  18:	15 c0       	rjmp	.+42     	; 0x44 <__bad_interrupt>
+  1a:	14 c0       	rjmp	.+40     	; 0x44 <__bad_interrupt>
+  1c:	13 c0       	rjmp	.+38     	; 0x44 <__bad_interrupt>
+  1e:	12 c0       	rjmp	.+36     	; 0x44 <__bad_interrupt>
+  20:	11 c0       	rjmp	.+34     	; 0x44 <__bad_interrupt>
+  22:	10 c0       	rjmp	.+32     	; 0x44 <__bad_interrupt>
+  24:	0f c0       	rjmp	.+30     	; 0x44 <__bad_interrupt>
+  26:	0e c0       	rjmp	.+28     	; 0x44 <__bad_interrupt>
+  28:	0d c0       	rjmp	.+26     	; 0x44 <__bad_interrupt>
+  2a:	0c c0       	rjmp	.+24     	; 0x44 <__bad_interrupt>
+  2c:	0b c0       	rjmp	.+22     	; 0x44 <__bad_interrupt>
+  2e:	0a c0       	rjmp	.+20     	; 0x44 <__bad_interrupt>
+  30:	09 c0       	rjmp	.+18     	; 0x44 <__bad_interrupt>
+  32:	08 c0       	rjmp	.+16     	; 0x44 <__bad_interrupt>
+
+00000034 <__ctors_end>:
+  34:	11 24       	eor	r1, r1
+  36:	1f be       	out	0x3f, r1	; 63
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+  3a:	d4 e0       	ldi	r29, 0x04	; 4
+  3c:	de bf       	out	0x3e, r29	; 62
+  3e:	cd bf       	out	0x3d, r28	; 61
+  40:	0e d0       	rcall	.+28     	; 0x5e <main>
+  42:	12 c0       	rjmp	.+36     	; 0x68 <_exit>
+
+00000044 <__bad_interrupt>:
+  44:	dd cf       	rjmp	.-70     	; 0x0 <__vectors>
+
+00000046 <initPWM>:
+    }
+}
+
+int initPWM(void)
+{
+	DDRD |= 1<<DDD6;
+  46:	56 9a       	sbi	0x0a, 6	; 10
+	TCCR0A |= 0b10000011; // 0b10110011
+  48:	84 b5       	in	r24, 0x24	; 36
+  4a:	83 68       	ori	r24, 0x83	; 131
+  4c:	84 bd       	out	0x24, r24	; 36
+	TCCR0B |= 0x01;
+  4e:	85 b5       	in	r24, 0x25	; 37
+  50:	81 60       	ori	r24, 0x01	; 1
+  52:	85 bd       	out	0x25, r24	; 37
+	return 1;
+}
+  54:	81 e0       	ldi	r24, 0x01	; 1
+  56:	90 e0       	ldi	r25, 0x00	; 0
+  58:	08 95       	ret
+
+0000005a <updatePWM>:
+
+int updatePWM(int value)
+{
+OCR0A = value;
+  5a:	87 bd       	out	0x27, r24	; 39
+//OCR0B = value;	
+return value;
+  5c:	08 95       	ret
+
+0000005e <main>:
+
+int main(void)
+{
+	
+	int duty = 100;
+	initPWM();
+  5e:	f3 df       	rcall	.-26     	; 0x46 <initPWM>
+	updatePWM(duty);
+  60:	84 e6       	ldi	r24, 0x64	; 100
+  62:	90 e0       	ldi	r25, 0x00	; 0
+  64:	fa df       	rcall	.-12     	; 0x5a <updatePWM>
+  66:	ff cf       	rjmp	.-2      	; 0x66 <main+0x8>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
